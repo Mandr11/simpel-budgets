@@ -5,6 +5,10 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
 
+Route::get('/', function () {
+    return response()->json(['message' => 'API is running']);
+});
+
 Route::get("/migrate", function() {
     Artisan::call("migrate");
 });
